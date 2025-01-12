@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Ajouter un département{% endblock title %}
+
+{% block content %}
+<header>Ajouter un département</header>
+<div class="main-content">
+    <div class="form-container">
+        <form method="POST">
+            {% csrf_token %}
+            <label for="nom_departement">Nom département</label>
+            <input type="text" id="nom_departement" name="nom_departement" required>
+
+            <label for="mail_departement">Mail département</label>
+            <input type="email" id="mail_departement" name="mail_departement" required>
+
+            <label for="numero_departement">Numéro département</label>
+            <input type="text" id="numero_departement" name="numero_departement" required>
+
+            <label for="description_departement">Description département</label>
+            <textarea id="description_departement" name="description_departement" required></textarea>
+
+            <button type="submit">Soumettre</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}

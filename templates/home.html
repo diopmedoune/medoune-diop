@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Accueil{% endblock title %}
+
+{% block content %}
+<h1>Liste des Fonctionnalités</h1>
+<main class="main-content">
+    <div class="features-container">
+        <div class="feature-card">
+            <h2>Ajouter Département (HTML seulement)</h2>
+            <p>Formulaire 100% HTML pour ajouter un nouveau département.</p>
+            <a href="{% url 'html_form' %}" class="btn">Accéder</a>
+        </div>
+        <div class="feature-card">
+            <h2>Ajouter Département (HTML + Django)</h2>
+            <p>Formulaire HTML et Django pour créer un département avec validation côté serveur.</p>
+            <a href="{% url 'django_html_form' %}" class="btn">Accéder</a>
+        </div>      
+        <div class="feature-card">
+            <h2>Ajouter Professeur</h2>
+            <p>Formulaire pour enregistrer un nouveau professeur dans la base de données.</p>
+            <a href="{% url 'add_prof' %}" class="btn">Accéder</a>
+        </div>
+        <div class="feature-card">
+            <h2>Voir Tous les Professeurs</h2>
+            <p>Liste complète des professeurs avec leurs informations détaillées.</p>
+            <a href="{% url 'show_all_profs' %}" class="btn">Accéder</a>
+        </div>
+        <div class="feature-card">
+            <h2>Voir l'API Professeurs</h2>
+            <p>Accédez à l'API exposant les données des professeurs.</p>
+            <a href="{% url 'profs-list' %}" class="btn">Accéder</a>
+        </div>    
+        <div class="feature-card">
+            <h2>Infos d'un professeur spécifique</h2>
+            <p>Dépuis l'endpoint <em>profs</em>, vous pouvez aussi voir les détails d'un professeur spécifique juste en ajoutant son identifiant à l'url</p>
+            <a href="{% url 'profs-list' %}" class="btn">[A tester avec L'API]</a>
+        </div>
+    </div>
+</main>
+{% endblock content %}

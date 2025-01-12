@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Ajouter un département{% endblock title %}
+
+{% block content %}
+<header>Ajouter un département</header>
+<div class="main-content">
+    <div class="form-container">
+        <form method="POST">
+            {% csrf_token %}
+            <!-- Champs issus de Django-->
+            <p>{{ form.nom_departement.label_tag }} {{ form.nom_departement }}</p>
+            <p>{{ form.mail_departement.label_tag }} {{ form.mail_departement }}</p>
+
+            <!-- Champs HTML/CSS -->
+            <label for="numero_departement">Numéro département</label>
+            <input type="text" id="numero_departement" name="numero_departement">
+
+            <label for="description_departement">Description département</label>
+            <textarea id="description_departement" name="description_departement"></textarea>
+
+            <button type="submit">Soumettre</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}

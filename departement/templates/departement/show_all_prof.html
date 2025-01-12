@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Liste des Professeurs{% endblock %}
+
+{% block content %}
+    <div class="professors-container">
+        <h1>Liste des Professeurs</h1>
+        {% for prof in profs %}
+            <div class="professor-card">
+                <div class="professor-info">
+                    <p><strong>Nom :</strong> {{ prof.nom_prof }}</p>
+                    <p><strong>Contact :</strong> {{ prof.contact_prof }}</p>
+                    <p><strong>Date d'adhésion :</strong> {{ prof.date_d_adhesion }}</p>
+                </div>
+                <div class="department-info">
+                    <p><strong>Chefs de Département :</strong></p>
+                    {% if prof.chef_departement.all %}
+                        <ul>
+                            {% for dept in prof.chef_departement.all %}
+                                <li>{{ dept.nom_departement }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p class="no-department">Aucun chef de département associé</p>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

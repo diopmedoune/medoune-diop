@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Ajouter un professeur{% endblock title %}
+
+{% block content %}
+<header>Ajouter un professeur</header>
+<div class="main-content">
+    <div class="form-container">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Soumettre</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}
