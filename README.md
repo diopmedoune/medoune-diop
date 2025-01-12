@@ -10,9 +10,11 @@ Ce projet est une application web développée avec **Django**, permettant de g�
 
 ### Gestion des Départements
 - Ajouter un département via :
-  - Un formulaire 100% HTML
+  - Un formulaire 100% HTML.
   - Un formulaire combinant HTML et Django.
+  - Validation du **numéro de département** : Un validateur est utilisé dans les deux formulaires pour s'assurer que le numéro est composé de **9 chiffres exactement**. Si ce format est incorrect, un message d'erreur est affiché.
 - Afficher la liste complète des départements.
+
 
 ### Gestion des Professeurs
 - Ajouter un professeur avec :
@@ -21,7 +23,6 @@ Ce projet est une application web développée avec **Django**, permettant de g�
   - Date d'adhésion au format **JJ/MM/AAAA**.
   - Associer un professeur à un ou plusieurs départements.
 - Afficher la liste complète des professeurs.
-- Gérer les relations entre professeurs et départements (ex. chefs de départements).
 
 ### API pour le Modèle Professeur
 - **Lister tous les professeurs :** Retourne une liste complète des professeurs avec leurs informations (nom, contact, date d'adhésion et départements associés).

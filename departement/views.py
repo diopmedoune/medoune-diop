@@ -13,8 +13,9 @@ def create_departement(request):
         form = DepartementForm(request.POST)
         if form.is_valid():
             form.save()
-        
             return render(request, 'departement/success_save_dept.html')
+
+        return render(request, 'departement/html_form.html', {'form': form})
 
     return render(request, 'departement/html_form.html')
 
@@ -28,7 +29,7 @@ def add_departement(request):
             form.save()
 
             return render(request, 'departement/success_save_dept.html')
-        
+ 
     context = {"form": form}
     return render(request, "departement/django_html_form.html", context=context)
 

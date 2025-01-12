@@ -8,16 +8,51 @@
     <div class="form-container">
         <form method="POST">
             {% csrf_token %}
-            <!-- Champs issus de Django-->
-            <p>{{ form.nom_departement.label_tag }} {{ form.nom_departement }}</p>
-            <p>{{ form.mail_departement.label_tag }} {{ form.mail_departement }}</p>
+            <!-- Champs issus de Django -->
+            <p>
+                {{ form.nom_departement.label_tag }} 
+                {{ form.nom_departement }}
+                {% if form.nom_departement.errors %}
+                    <ul class="errorlist">
+                        {% for error in form.nom_departement.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </p>
+
+            <p>
+                {{ form.mail_departement.label_tag }} 
+                {{ form.mail_departement }}
+                {% if form.mail_departement.errors %}
+                    <ul class="errorlist">
+                        {% for error in form.mail_departement.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </p>
 
             <!-- Champs HTML/CSS -->
             <label for="numero_departement">Numéro département</label>
             <input type="text" id="numero_departement" name="numero_departement">
+            {% if form.numero_departement.errors %}
+                <ul class="errorlist">
+                    {% for error in form.numero_departement.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
 
             <label for="description_departement">Description département</label>
             <textarea id="description_departement" name="description_departement"></textarea>
+            {% if form.description_departement.errors %}
+                <ul class="errorlist">
+                    {% for error in form.description_departement.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
 
             <button type="submit">Soumettre</button>
         </form>
