@@ -36,9 +36,15 @@ Ce projet est une application web développée avec **Django**, permettant de g�
 
 ## Installation
 
-1. **Clonez le repository** :
-   ```bash
-   git clone https://github.com/diopmedoune/medoune-diop.git
+1. **Clonez le repository** ou **téléchargez le fichier .zip et extrayez-le** :
+   - Pour cloner :
+     ```bash
+     git clone https://github.com/diopmedoune/medoune-diop.git
+     ```
+   - Pour télécharger le fichier .zip :
+     - Allez sur la page [GitHub du repository](https://github.com/diopmedoune/medoune-diop).
+     - Cliquez sur le bouton "Code" puis sur "Download ZIP".
+     - Extrayez le fichier .zip téléchargé dans le répertoire de votre choix.
 
 2. **Créer un environnement virtuel** :  
    - Linux/Mac : `python3 -m venv env`  
